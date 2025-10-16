@@ -1,8 +1,15 @@
 const express = require("express"); // this is require module syntax -> common JS
 // import express from "express" -> module JS syntax
+// Express is a minimal and flexible
+// Node.js web application framework
+
 const app = express(); // with using express we create a variable
 const port = 3000; // virual port -> one of free port for server to listen
 require("dotenv").config();
+// config will read your .env file, parse the contents,
+// assign it to process.env, and return an Object with a
+// parsed key containing the loaded content or an error key
+// if it failed.
 
 // we need to make a get request listen if anyone request on that endpoint
 app.get("/", (req, res) => {
@@ -20,6 +27,10 @@ app.get("/login", (req, res) => {
 
 app.get("/youtube", (req, res) => {
   res.send("<h2>chai aur code</h2>");
+});
+
+app.get("/hello", (req, res) => {
+  res.send(200);
 });
 
 // the listen power is also provided my app variable(express)
